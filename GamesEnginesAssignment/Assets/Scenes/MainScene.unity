@@ -327,10 +327,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afacfbfa41d6d834d853c5033af90f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curveRadius: 4
   pipeRadius: 1
-  curveSegmentCount: 20
   pipeSegmentCount: 10
+  minCurveRadius: 4
+  maxCurveRadius: 20
+  minCurveSegmentCount: 4
+  maxCurveSegmentCount: 10
   ringDistance: 1
 --- !u!4 &961011906
 Transform:

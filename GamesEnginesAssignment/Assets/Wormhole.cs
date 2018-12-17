@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Wormhole : MonoBehaviour
 {
+       //A tunnel section is a partial circle.Or a partial torus in 3D
+    public float pipeRadius; ////A torus is defined by two radiuses pipeRadius and curveRadius
+    public int pipeSegmentCount; ////i will use a mesh to create the pipe's surface
 
-    //A tunnel section is a partial circle. Or a partial torus in 3D
-    public float curveRadius, pipeRadius; //A torus is defined by two radiuses
-    public int curveSegmentCount, pipeSegmentCount; //i will use a mesh to create the pipe's surface
+    public float minCurveRadius, maxCurveRadius;
+    public int minCurveSegmentCount, maxCurveSegmentCount;
+
+    private float curveRadius;
+    private int curveSegmentCount;
+
 
     private Vector3 GetPointOnTorus(float u, float v) //find points on the surface using x = (R + r cos v) cos u
         //y = (R + r cos v) sin u
@@ -32,6 +38,9 @@ public class Wormhole : MonoBehaviour
         //create the mesh when the object awakens
         GetComponent<MeshFilter>().mesh = mesh = new Mesh();
         mesh.name = "Wormhole";
+        curveRadius = Random.Range(minCurveRadius, maxCurveRadius);
+        // randomize the curve radius and segment count to each fall within a range
+        curveSegmentCount = Random.Range(minCurveSegmentCount, maxCurveSegmentCount + 1);
         SetVertices();
         SetTriangles();
         mesh.RecalculateNormals();
