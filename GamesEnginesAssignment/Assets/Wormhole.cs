@@ -55,7 +55,42 @@ public class Wormhole : MonoBehaviour
         SetTriangles();
     }
 
-    private void SetVertices() { }
+    private void SetVertices() //give each quad its own four vertices
+    {
+        vertices = new Vector3[pipeSegmentCount * curveSegmentCount * 4];
+        float uStep = (2f * Mathf.PI) / curveSegmentCount;
+        CreateFirstQuadRing(uStep);
+        mesh.vertices = vertices;
+    }
 
-    private void SetTriangles() { }
+    private void CreateFirstQuadRing(float u)
+    {
+        float vStep = (2f * Mathf.PI) / pipeSegmentCount;
+        //create two vertices A and B
+        Vector3 vertexA = GetPointOnTorus(0f, 0f);
+        Vector3 vertexB = GetPointOnTorus(u, 0f);
+        //assign  vertices to the quads as it iterates through the segments
+        for (int v = 1, i = 0; v <= pipeSegmentCount; v++, i += 4)
+        {
+            vertices[i] = vertexA;
+            vertices[i + 1] = vertexA = GetPointOnTorus(0f, v * vStep);
+            vertices[i + 2] = vertexB;
+            vertices[i + 3] = vertexB = GetPointOnTorus(u, v * vStep);
+        }
+    }
+
+    private void SetTriangles()//initialize the triangles. Each quad has two triangles = six vertex indices.
+    {
+            triangles = new int[pipeSegmentCount * curveSegmentCount * 6];
+        //order vertices so triangles show  on the outside of the tunnel.
+        for (int t = 0, i = 0; t < triangles.Length; t += 6, i += 4)
+            {
+                triangles[t] = i;
+                triangles[t + 1] = triangles[t + 4] = i + 1;
+                triangles[t + 2] = triangles[t + 3] = i + 2;
+                triangles[t + 5] = i + 3;
+            }
+
+            mesh.triangles = triangles;
+        }
 }
