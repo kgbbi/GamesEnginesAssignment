@@ -32,6 +32,7 @@ public class Wormhole : MonoBehaviour
     private int[] triangles;
     public float ringDistance;
     private float curveAngle;
+    private float relativeRotation;
 
     private void Awake()
     {
@@ -112,9 +113,7 @@ public class Wormhole : MonoBehaviour
     public void AlignWith(Wormhole pipe)
     {
         //perform random relative rotation of tunnels
-        float relativeRotation =
-            Random.Range(0, curveSegmentCount) * 360f / pipeSegmentCount;
-
+        relativeRotation = Random.Range(0, curveSegmentCount) * 360f / pipeSegmentCount;
         transform.SetParent(pipe.transform, false);
         //make sure that the pipe is at its parent's origin
         transform.localPosition = Vector3.zero;
@@ -139,6 +138,14 @@ public class Wormhole : MonoBehaviour
         get
         {
             return curveAngle;
+        }
+    }
+
+    public float RelativeRotation
+    {
+        get
+        {
+            return relativeRotation;
         }
     }
 }
