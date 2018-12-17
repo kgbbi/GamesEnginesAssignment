@@ -39,14 +39,20 @@ public class Wormhole : MonoBehaviour
         //create the mesh when the object awakens
         GetComponent<MeshFilter>().mesh = mesh = new Mesh();
         mesh.name = "Wormhole";
+      
+       
+    }
+
+    public void Generate()
+    {
         curveRadius = Random.Range(minCurveRadius, maxCurveRadius);
         // randomize the curve radius and segment count to each fall within a range
         curveSegmentCount = Random.Range(minCurveSegmentCount, maxCurveSegmentCount + 1);
+        mesh.Clear();
         SetVertices();
         SetTriangles();
         mesh.RecalculateNormals();
     }
-
     private void SetVertices() //give each quad its own four vertices
     {
         vertices = new Vector3[pipeSegmentCount * curveSegmentCount * 4];
@@ -123,6 +129,7 @@ public class Wormhole : MonoBehaviour
         transform.Rotate(relativeRotation, 0f, 0f);
         transform.Translate(0f, -curveRadius, 0f);
         transform.SetParent(pipe.transform.parent);
+        transform.localScale = Vector3.one;
     }
 
     public float CurveRadius

@@ -18,7 +18,7 @@ public class Tunnell : MonoBehaviour {
         {
             Wormhole pipe = pipes[i] = Instantiate<Wormhole>(pipePrefab);
             pipe.transform.SetParent(transform, false);
-            //tunnells aligned with each other by aligning with the previous one.
+            pipe.Generate();
             if (i > 0)
             {
                 pipe.AlignWith(pipes[i - 1]);
@@ -39,6 +39,8 @@ public class Tunnell : MonoBehaviour {
         ShiftPipes();
         //align the next pipe with the origin, and reset its position
         AlignNextPipeWithOrigin();
+        pipes[pipes.Length - 1].Generate();
+        pipes[pipes.Length - 1].AlignWith(pipes[pipes.Length - 2]);
         transform.localPosition = new Vector3(0f, -pipes[0].CurveRadius);
         return pipes[0];
     }
