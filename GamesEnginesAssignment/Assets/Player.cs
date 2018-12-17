@@ -9,8 +9,9 @@ public class Player : MonoBehaviour {
     private float distanceTraveled;
     private float deltaToRotation;
     private float systemRotation;
-    private Transform environment;
-    private float worldRotation;
+    private Transform environment, control;
+    public float rotationVelocity;
+    private float worldRotation, viewRotation;
 
     public float velocity;
 
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour {
     private void Start()
     {
         environment = pipeSystem.transform.parent;
+        control = transform.GetChild(0);
         //start at the first pipe of the system
         currentPipe = pipeSystem.SetupFirstPipe();
         SetupCurrentPipe();
@@ -40,6 +42,7 @@ public class Player : MonoBehaviour {
             systemRotation = delta * deltaToRotation;
         }
         pipeSystem.transform.localRotation = Quaternion.Euler(0f, 0f, systemRotation);
+        UpdateViewRotation();
     }
 
 
@@ -56,5 +59,20 @@ public class Player : MonoBehaviour {
             worldRotation -= 360f;
         }
         environment.localRotation = Quaternion.Euler(worldRotation, 0f, 0f);
+    }
+
+    private void UpdateViewRotation()
+    {
+        viewRotation +=
+            rotationVelocity * Time.deltaTime * Input.GetAxis("Horizontal");
+        if (viewRotation < 0f)
+        {
+            viewRotation += 360f;
+        }
+        else if (viewRotation >= 360f)
+        {
+            viewRotation -= 360f;
+        }
+        control.localRotation = Quaternion.Euler(viewRotation, 0f, 0f);
     }
 }

@@ -413,6 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipeSystem: {fileID: 299895128}
+  rotationVelocity: 180
   velocity: 5
 --- !u!4 &959081430
 Transform:
