@@ -25,6 +25,7 @@ public class Wormhole : MonoBehaviour
     private Vector3[] vertices;
     private int[] triangles;
     public float ringDistance;
+    private float curveAngle;
 
     private void Awake()
     {
@@ -41,6 +42,7 @@ public class Wormhole : MonoBehaviour
         vertices = new Vector3[pipeSegmentCount * curveSegmentCount * 4];
         //setting the distance between rings to not cover entire torus
         float uStep = ringDistance / curveRadius;
+        curveAngle = uStep * curveSegmentCount * (360f / (2f * Mathf.PI));
         CreateFirstQuadRing(uStep);
         //apply to all vertices that are stuck at the origin
         int iDelta = pipeSegmentCount * 4;
@@ -96,5 +98,10 @@ public class Wormhole : MonoBehaviour
             vertices[i + 2] = vertex;
             vertices[i + 3] = vertex = GetPointOnTorus(u, v * vStep);
         }
+    }
+    //align itself 
+    public void AlignWith(Wormhole pipe)
+    {
+        transform.localRotation = Quaternion.Euler(0f, 0f, -pipe.curveAngle);
     }
 }

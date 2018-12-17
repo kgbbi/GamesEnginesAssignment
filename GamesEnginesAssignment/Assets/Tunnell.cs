@@ -18,6 +18,11 @@ public class Tunnell : MonoBehaviour {
         {
             Wormhole pipe = pipes[i] = Instantiate<Wormhole>(pipePrefab);
             pipe.transform.SetParent(transform, false);
+            //tunnells aligned with each other by aligning with the previous one.
+            if (i > 0)
+            {
+                pipe.AlignWith(pipes[i - 1]);
+            }
         }
     }
 }
