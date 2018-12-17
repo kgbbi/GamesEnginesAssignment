@@ -133,4 +133,12 @@ public class Wormhole : MonoBehaviour
             return curveRadius;
         }
     }
+
+    public float CurveAngle
+    {
+        get
+        {
+            return curveAngle;
+        }
+    }
 }

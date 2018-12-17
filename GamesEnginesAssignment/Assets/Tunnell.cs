@@ -32,4 +32,41 @@ public class Tunnell : MonoBehaviour {
         transform.localPosition = new Vector3(0f, -pipes[0].CurveRadius);
         return pipes[0];
     }
+
+    public Wormhole SetupNextPipe()
+    //this means Tunnell has to shift the pipes in its array
+    {
+        ShiftPipes();
+        //align the next pipe with the origin, and reset its position
+        AlignNextPipeWithOrigin();
+        transform.localPosition = new Vector3(0f, -pipes[0].CurveRadius);
+        return pipes[0];
+    }
+
+    private void ShiftPipes()
+    {//current first pipe becomes the new last pipe
+        Wormhole temp = pipes[0];
+        for (int i = 1; i < pipes.Length; i++)
+        {
+            pipes[i - 1] = pipes[i];
+        }
+        pipes[pipes.Length - 1] = temp;
+    }
+    private void AlignNextPipeWithOrigin()
+    {//reset position and rotation of the new first pipe
+        Transform transformToAlign = pipes[0].transform;
+        for (int i = 1; i < pipes.Length; i++)
+        {
+            pipes[i].transform.SetParent(transformToAlign);
+        }
+
+        transformToAlign.localPosition = Vector3.zero;
+        transformToAlign.localRotation = Quaternion.identity;
+
+        for (int i = 1; i < pipes.Length; i++)
+        {
+            pipes[i].transform.SetParent(transform);
+        }
+    }
+
 }
