@@ -283,6 +283,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afacfbfa41d6d834d853c5033af90f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curveRadius: 4
+  pipeRadius: 1
+  curveSegmentCount: 20
+  pipeSegmentCount: 10
 --- !u!4 &961011906
 Transform:
   m_ObjectHideFlags: 0
