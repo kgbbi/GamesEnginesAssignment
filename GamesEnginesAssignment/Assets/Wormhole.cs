@@ -102,6 +102,18 @@ public class Wormhole : MonoBehaviour
     //align itself 
     public void AlignWith(Wormhole pipe)
     {
+        //perform random relative rotation of tunnels
+        float relativeRotation =
+            Random.Range(0, curveSegmentCount) * 360f / pipeSegmentCount;
+
+        transform.SetParent(pipe.transform, false);
+        //make sure that the pipe is at its parent's origin
+        transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.Euler(0f, 0f, -pipe.curveAngle);
+        // align with the parent and move up so origin sits at the end point of parent tunnell
+        transform.Translate(0f, pipe.curveRadius, 0f);
+        transform.Rotate(relativeRotation, 0f, 0f);
+        transform.Translate(0f, -curveRadius, 0f);
+        transform.SetParent(pipe.transform.parent);
     }
 }
