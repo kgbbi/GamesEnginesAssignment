@@ -53,6 +53,7 @@ public class Wormhole : MonoBehaviour
         mesh.name = "Wormhole";
         SetVertices();
         SetTriangles();
+        mesh.RecalculateNormals();
     }
 
     private void SetVertices() //give each quad its own four vertices
@@ -60,6 +61,12 @@ public class Wormhole : MonoBehaviour
         vertices = new Vector3[pipeSegmentCount * curveSegmentCount * 4];
         float uStep = (2f * Mathf.PI) / curveSegmentCount;
         CreateFirstQuadRing(uStep);
+        //apply to all vertices that are stuck at the origin
+        int iDelta = pipeSegmentCount * 4;
+        for (int u = 2, i = iDelta; u <= curveSegmentCount; u++, i += iDelta)
+        {
+            CreateQuadRing(u * uStep, i);
+        }
         mesh.vertices = vertices;
     }
 
@@ -93,4 +100,20 @@ public class Wormhole : MonoBehaviour
 
             mesh.triangles = triangles;
         }
+
+    //copy the first two vertices per quad from those of the previous ring
+    private void CreateQuadRing(float u, int i)
+    {
+        float vStep = (2f * Mathf.PI) / pipeSegmentCount;
+        int ringOffset = pipeSegmentCount * 4;
+
+        Vector3 vertex = GetPointOnTorus(u, 0f);
+        for (int v = 1; v <= pipeSegmentCount; v++, i += 4)
+        {
+            vertices[i] = vertices[i - ringOffset + 2];
+            vertices[i + 1] = vertices[i - ringOffset + 3];
+            vertices[i + 2] = vertex;
+            vertices[i + 3] = vertex = GetPointOnTorus(u, v * vStep);
+        }
+    }
 }
