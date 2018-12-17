@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipePrefab: {fileID: 961011905}
-  pipeCount: 4
+  pipeCount: 6
 --- !u!4 &299895129
 Transform:
   m_ObjectHideFlags: 0
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipeSystem: {fileID: 299895128}
-  velocity: 1
+  velocity: 10
 --- !u!4 &959081430
 Transform:
   m_ObjectHideFlags: 0
