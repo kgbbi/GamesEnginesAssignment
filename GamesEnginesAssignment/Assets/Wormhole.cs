@@ -33,6 +33,7 @@ public class Wormhole : MonoBehaviour
     public float ringDistance;
     private float curveAngle;
     private float relativeRotation;
+    private Vector2[] surface;
 
     private void Awake()
     {
@@ -50,6 +51,7 @@ public class Wormhole : MonoBehaviour
         curveSegmentCount = Random.Range(minCurveSegmentCount, maxCurveSegmentCount + 1);
         mesh.Clear();
         SetVertices();
+        SetSurface();
         SetTriangles();
         mesh.RecalculateNormals();
     }
@@ -130,6 +132,19 @@ public class Wormhole : MonoBehaviour
         transform.Translate(0f, -curveRadius, 0f);
         transform.SetParent(pipe.transform.parent);
         transform.localScale = Vector3.one;
+    }
+
+    private void SetSurface()
+    {
+        surface = new Vector2[vertices.Length];
+        for (int i = 0; i < vertices.Length; i += 4)
+        {
+            surface[i] = Vector2.zero;
+            surface[i + 1] = Vector2.right;
+            surface[i + 2] = Vector2.up;
+            surface[i + 3] = Vector2.one;
+        }
+        mesh.uv = surface;
     }
 
     public float CurveRadius
