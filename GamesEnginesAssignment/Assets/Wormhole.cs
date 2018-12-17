@@ -21,30 +21,10 @@ public class Wormhole : MonoBehaviour
         return p;
     }
 
-
-    private void OnDrawGizmos() //test whether torus displays
-    {
-        float vStep = (2f * Mathf.PI) / pipeSegmentCount;
-        float uStep = (2f * Mathf.PI) / curveSegmentCount;
-
-        for (int u = 0; u < curveSegmentCount; u++)
-        {
-            //test for entire torus
-            for (int v = 0; v < pipeSegmentCount; v++)
-            {
-                Vector3 point = GetPointOnTorus(u * uStep, v * vStep);
-                Gizmos.color = new Color(
-                    1f,
-                    (float) v / pipeSegmentCount,
-                    (float) u / curveSegmentCount);
-                Gizmos.DrawSphere(point, 0.1f);
-            }
-        }
-    }
-
     private Mesh mesh;
     private Vector3[] vertices;
     private int[] triangles;
+    public float ringDistance;
 
     private void Awake()
     {
@@ -59,7 +39,8 @@ public class Wormhole : MonoBehaviour
     private void SetVertices() //give each quad its own four vertices
     {
         vertices = new Vector3[pipeSegmentCount * curveSegmentCount * 4];
-        float uStep = (2f * Mathf.PI) / curveSegmentCount;
+        //setting the distance between rings to not cover entire torus
+        float uStep = ringDistance / curveRadius;
         CreateFirstQuadRing(uStep);
         //apply to all vertices that are stuck at the origin
         int iDelta = pipeSegmentCount * 4;
