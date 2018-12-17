@@ -125,4 +125,12 @@ public class Wormhole : MonoBehaviour
         transform.Translate(0f, -curveRadius, 0f);
         transform.SetParent(pipe.transform.parent);
     }
+
+    public float CurveRadius
+    {
+        get
+        {
+            return curveRadius;
+        }
+    }
 }

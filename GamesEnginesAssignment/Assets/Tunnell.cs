@@ -25,4 +25,11 @@ public class Tunnell : MonoBehaviour {
             }
         }
     }
+
+    public Wormhole SetupFirstPipe()
+    //provide the first pipe
+    {
+        transform.localPosition = new Vector3(0f, -pipes[0].CurveRadius);
+        return pipes[0];
+    }
 }
