@@ -557,21 +557,21 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e2495d81675bb401eb208b8d9a34c013, type: 2}
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
       propertyPath: StartColor.r
-      value: 0
+      value: 0.12381935
       objectReference: {fileID: 0}
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
       propertyPath: StartColor.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
       propertyPath: StartColor.b
-      value: 0.8663819
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
@@ -656,6 +656,11 @@ Prefab:
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
       propertyPath: pipeRadius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
+        type: 2}
+      propertyPath: speed
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -14,7 +14,7 @@ public class Wormhole : MonoBehaviour
     private float curveRadius;
     private int curveSegmentCount;
 
-    public float speed = 0.2f;
+    public float speed = 1.0f;
     public Color StartColor;
     public Color EndColor;
     public bool repeat;
@@ -42,7 +42,7 @@ public class Wormhole : MonoBehaviour
     private float relativeRotation;
     private Vector2[] surface;
 
-    /*
+ 
    private void Start()
     {
        
@@ -66,8 +66,7 @@ public class Wormhole : MonoBehaviour
         }
     }
     
-    */
-
+   
     private void Awake()
     {
         //create the mesh when the object awakens
