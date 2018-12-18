@@ -40,8 +40,7 @@ public class Wormhole : MonoBehaviour
         //create the mesh when the object awakens
         GetComponent<MeshFilter>().mesh = mesh = new Mesh();
         mesh.name = "Wormhole";
-      
-       
+
     }
 
     public void Generate()
@@ -54,6 +53,7 @@ public class Wormhole : MonoBehaviour
         SetSurface();
         SetTriangles();
         mesh.RecalculateNormals();
+        
     }
     private void SetVertices() //give each quad its own four vertices
     {
