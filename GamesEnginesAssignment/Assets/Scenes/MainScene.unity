@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipePrefab: {fileID: 961011905}
-  pipeCount: 6
+  pipeCount: 12
 --- !u!4 &299895129
 Transform:
   m_ObjectHideFlags: 0
