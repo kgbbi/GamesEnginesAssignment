@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scipts\ItemGenerator.cs" />
      <Compile Include="Assets\Scipts\Player.cs" />
      <Compile Include="Assets\Scipts\RandomPlacer.cs" />
+     <Compile Include="Assets\Scipts\SpiralPlacer.cs" />
      <Compile Include="Assets\Scipts\Tunnell.cs" />
      <Compile Include="Assets\Scipts\TunnellItem.cs" />
      <Compile Include="Assets\Scipts\Wormhole.cs" />
