@@ -14,7 +14,7 @@ public class Wormhole : MonoBehaviour
     private float curveRadius;
     private int curveSegmentCount;
 
-   /* public float speed = 1.0f;
+  /*  public float speed = 1.0f;
     public Color StartColor;
     public Color EndColor;
     public bool repeat;
@@ -44,31 +44,32 @@ public class Wormhole : MonoBehaviour
     private Vector2[] surface;
     public ItemGenerator[] generators;
 
-    /*   private void Start()
+
+   /* private void Start()
+    {
+       
+        startTime = Time.time;
+    }
+
+
+    private void Update()
+    {
+        if(!repeat)
         {
-
-            startTime = Time.time;
+            float t = (Time.time - startTime) * speed;
+            GetComponent<Renderer>().material.color = Color.Lerp(StartColor, EndColor, t);
+            
         }
-
-
-        private void Update()
+        else
         {
-            if(!repeat)
-            {
-                float t = (Time.time - startTime) * speed;
-                GetComponent<Renderer>().material.color = Color.Lerp(StartColor, EndColor, t);
-
-            }
-            else
-            {
-                float t = (Mathf.Sin(Time.time - startTime) * speed);
-                GetComponent<Renderer>().material.color = Color.Lerp(StartColor, EndColor, t);
-
-            }
+            float t = (Mathf.Sin(Time.time - startTime) * speed);
+            GetComponent<Renderer>().material.color = Color.Lerp(StartColor, EndColor, t);
+           
         }
-        */
-
-
+    }
+    */
+    
+   
     private void Awake()
     {
         //create the mesh when the object awakens
@@ -80,7 +81,6 @@ public class Wormhole : MonoBehaviour
 
     public void Generate()
     {
-
         curveRadius = Random.Range(minCurveRadius, maxCurveRadius);
         // randomize the curve radius and segment count to each fall within a range
         curveSegmentCount = Random.Range(minCurveSegmentCount, maxCurveSegmentCount + 1);
@@ -90,7 +90,6 @@ public class Wormhole : MonoBehaviour
         SetTriangles();
         mesh.RecalculateNormals();
         generators[Random.Range(0, generators.Length)].GenerateItems(this);
-
     }
     private void SetVertices() //give each quad its own four vertices
     {
@@ -210,7 +209,6 @@ private void SetSurface()
             return relativeRotation;
         }
     }
-
     public int CurveSegmentCount
     {
         get

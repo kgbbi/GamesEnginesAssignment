@@ -12,7 +12,7 @@ public class RandomPlacer : ItemGenerator
         float angleStep = pipe.CurveAngle / pipe.CurveSegmentCount;
         for (int i = 0; i < pipe.CurveSegmentCount; i++)
         {
-            TunnellItem item = Instantiate<TunnellItem>(
+           TunnellItem item = Instantiate<TunnellItem>(
                 itemPrefabs[Random.Range(0, itemPrefabs.Length)]);
             float pipeRotation =
                 (Random.Range(0, pipe.pipeSegmentCount) + 0.5f) *

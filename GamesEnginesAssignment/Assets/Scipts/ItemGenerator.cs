@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ItemGenerator : MonoBehaviour {
+
+public abstract class ItemGenerator : MonoBehaviour
+{
 
     public abstract void GenerateItems(Wormhole pipe);
 }
