@@ -230,7 +230,6 @@ GameObject:
   m_Component:
   - component: {fileID: 352638326}
   - component: {fileID: 352638325}
-  - component: {fileID: 352638327}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -346,17 +345,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &352638327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 352638324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a903ce1f8c40dd549ab645fd6cc254f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +519,7 @@ Prefab:
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
       propertyPath: generators.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4824369293070352, guid: 69cc7194a781e1a46b25c2e146f3bfbf, type: 2}
       propertyPath: m_LocalPosition.x
@@ -574,11 +562,11 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e2495d81675bb401eb208b8d9a34c013, type: 2}
+      objectReference: {fileID: 2100000, guid: db9c461312705db47a81aa39fd562bcd, type: 2}
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
       propertyPath: StartColor.r
-      value: 0.12381935
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
@@ -588,22 +576,22 @@ Prefab:
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
       propertyPath: StartColor.b
-      value: 1
+      value: 0.029075146
       objectReference: {fileID: 0}
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
       propertyPath: EndColor.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
       propertyPath: EndColor.g
-      value: 0
+      value: 0.2393508
       objectReference: {fileID: 0}
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
       propertyPath: EndColor.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
@@ -678,31 +666,26 @@ Prefab:
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
       propertyPath: speed
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
       propertyPath: generators.Array.data[0]
       value: 
-      objectReference: {fileID: 11403388, guid: f44504c1880b44ec688c1df9eae543e2,
+      objectReference: {fileID: 11442172, guid: 7a9123c8d69a1499396ce3962523a4da,
         type: 2}
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
       propertyPath: generators.Array.data[1]
       value: 
-      objectReference: {fileID: 11442172, guid: 7a9123c8d69a1499396ce3962523a4da,
+      objectReference: {fileID: 11403388, guid: f44504c1880b44ec688c1df9eae543e2,
         type: 2}
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
       propertyPath: generators.Array.data[2]
       value: 
-      objectReference: {fileID: 11403388, guid: f44504c1880b44ec688c1df9eae543e2,
+      objectReference: {fileID: 11442172, guid: 7a9123c8d69a1499396ce3962523a4da,
         type: 2}
-    - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
-        type: 2}
-      propertyPath: pipeSegmentCount
-      value: 12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69cc7194a781e1a46b25c2e146f3bfbf, type: 2}
   m_IsPrefabAsset: 0
@@ -734,7 +717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipeSystem: {fileID: 299895128}
-  rotationVelocity: 50
+  rotationVelocity: 75
   velocity: 5
 --- !u!4 &959081430
 Transform:

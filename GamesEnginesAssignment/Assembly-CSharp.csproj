@@ -53,10 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scipts\Audio.cs" />
-     <Compile Include="Assets\Scipts\CubeScript.cs" />
      <Compile Include="Assets\Scipts\ItemGenerator.cs" />
-     <Compile Include="Assets\Scipts\ParamCube.cs" />
      <Compile Include="Assets\Scipts\Player.cs" />
      <Compile Include="Assets\Scipts\RandomPlacer.cs" />
      <Compile Include="Assets\Scipts\SpiralPlacer.cs" />
