@@ -53,9 +53,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scipts\ItemGenerator.cs" />
      <Compile Include="Assets\Scipts\Player.cs" />
+     <Compile Include="Assets\Scipts\RandomPlacer.cs" />
      <Compile Include="Assets\Scipts\Tunnell.cs" />
+     <Compile Include="Assets\Scipts\TunnellItem.cs" />
      <Compile Include="Assets\Scipts\Wormhole.cs" />
+     <None Include="Assets\Shaders\Texture Splatting.shader" />
+     <None Include="Assets\Shaders\Textured With Detail.shader" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>D:/4th year/Games Engine/Games Engines Project/GamesEnginesAssignment/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

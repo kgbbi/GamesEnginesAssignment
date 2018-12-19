@@ -14,11 +14,12 @@ public class Wormhole : MonoBehaviour
     private float curveRadius;
     private int curveSegmentCount;
 
-    public float speed = 1.0f;
+   /* public float speed = 1.0f;
     public Color StartColor;
     public Color EndColor;
     public bool repeat;
     private float startTime;
+    */
 
 
 
@@ -42,8 +43,7 @@ public class Wormhole : MonoBehaviour
     private float relativeRotation;
     private Vector2[] surface;
 
- 
-   private void Start()
+/*   private void Start()
     {
        
         startTime = Time.time;
@@ -65,6 +65,7 @@ public class Wormhole : MonoBehaviour
            
         }
     }
+    */
     
    
     private void Awake()
@@ -203,6 +204,14 @@ private void SetSurface()
         get
         {
             return relativeRotation;
+        }
+    }
+
+    public int CurveSegmentCount
+    {
+        get
+        {
+            return curveSegmentCount;
         }
     }
 }
