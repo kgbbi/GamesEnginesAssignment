@@ -33,16 +33,24 @@ Step 4.I was hoping to have random generated blocks that I could add to the proj
 
 A wormhole has many segments which can be derived from a partial circle which in 3D is called a torus. A torus has two radiuses. One is radius of the wormholes diameter and the second is the radius of the curve in a given direction.
 This can be seen below.
+
+
+
 ![Torus](https://i.ytimg.com/vi/viBUNh82YEc/hqdefault.jpg)
+
+
+
 In order to make the wormhole outside surface I used a mesh. I then proceeded to segment that wormhole into quads.
 A torus can be defined using the following function.
 x = (R + r cos v) cos u
 y = (R + r cos v) sin u
 z = r cos v
+ 
  r = radius of tunnel. 
  R = radius of the curve.
  u = angle along the curve denoted in radians so in the 0–2π.
  v = value of angle along the tunnell.
+ 
  The construction of  the mesh was set to when the object awakens which requires its triangles and vertices to be set.To do this I triangulated the torus by giving each quad in the tunnell four vertices.
  I started with the first diameter of quads and got two vertices: Vertex A and Vertex B which is set along the u axis from the torus function. Then I increment one along v and grab the next four vertices. 
  This is repeated until the entire torus is meshed .Every increment the previous and new points are assigned to the current vertices if that segment.
