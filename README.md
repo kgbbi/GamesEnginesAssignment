@@ -61,5 +61,9 @@ It keeps track of the world rotation and update it when going into a new tunnel 
 
 ## Development
 
-
-
+I really enjoyed working with Unity, however It was really hard for me to maintain momentum throughtout the semester with it. I felt like the speed was too fast for me and that was probably only because I have never used Unity
+before in college or in my personal time. However there are alot of tutorials, forums and information online that helped a great deal in helping me understand and develop this project. There were mainly tutorials that I researched from building meshes , redering , random generation , object generation , audio effects etc. 
+Alltogether using all this information I was able to mesh together myself a decent project that I would like to keep developing in my free time as a hobby especially now that the semester is over and I finally have some free time to not be stressed out on
+other modules.One of my biggest regrets in doing this project is that I couldnt add all the features I wanted in time which is a real shame. The audio manimulation of the Objects i tried for an entire day to work out and got nowhere. 
+This is simply due to me still learning Unity and how it all works together to create a work of art.
+Overall it was enjoyable and was definitely the most fun module of the semester even though it was one of the hardest for me to be on par with the rest of the class.
