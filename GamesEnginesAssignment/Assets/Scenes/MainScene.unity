@@ -519,7 +519,7 @@ Prefab:
     - target: {fileID: 114126978747120490, guid: 69cc7194a781e1a46b25c2e146f3bfbf,
         type: 2}
       propertyPath: generators.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4824369293070352, guid: 69cc7194a781e1a46b25c2e146f3bfbf, type: 2}
       propertyPath: m_LocalPosition.x

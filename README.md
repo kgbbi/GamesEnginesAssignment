@@ -26,10 +26,10 @@ It aims to provide a visual experince that is pleaseant and gives off the impres
 # How It Works
 
 There are 4 steps that I did when doing this project.
-Step 1.Create a torus, This was the building block of the wormhole and was how I saw through research that it was one of the best methods to create such a tunnell.
-Step 2.Combine multiple random torus tunnels together. Becase the wormhole effect makes for random angles, this means that there must be multiple wormhole segments.
-Step 3.Camera movement for the user in order to be able to get a more immersive effect. Done by setting up horizontal left right input.
-Step 4.I was hoping to have random generated blocks that I could add to the project that would of have been affected by sound however I have not managed to get that part working yet.
+Step 1:  Create a torus, This was the building block of the wormhole and was how I saw through research that it was one of the best methods to create such a tunnel.
+Step 2:  Combine multiple random torus tunnels together. Because the wormhole effect makes for random angles, this means that there must be multiple wormhole segments.
+Step 3:  Camera movement for the user in order to be able to get a more immersive effect. Done by setting up horizontal left right input.
+Step 4:  I was hoping to have random generated blocks that I could add to the project that would of have been affected by sound however I have not managed to get that part working yet.
 
 A wormhole has many segments which can be derived from a partial circle which in 3D is called a torus. A torus has two radiuses. One is radius of the wormholes diameter and the second is the radius of the curve in a given direction.
 This can be seen below.
@@ -67,3 +67,7 @@ Alltogether using all this information I was able to mesh together myself a dece
 other modules.One of my biggest regrets in doing this project is that I couldnt add all the features I wanted in time which is a real shame. The audio manimulation of the Objects i tried for an entire day to work out and got nowhere. 
 This is simply due to me still learning Unity and how it all works together to create a work of art.
 Overall it was enjoyable and was definitely the most fun module of the semester even though it was one of the hardest for me to be on par with the rest of the class.
+
+##Video
+
+[Video of my project](https://youtu.be/2oUNc_9NFvU)
