@@ -101,4 +101,9 @@ MonoBehaviour:
   maxCurveRadius: 20
   minCurveSegmentCount: 4
   maxCurveSegmentCount: 10
+  speed: 1
+  StartColor: {r: 0, g: 0, b: 0, a: 0}
+  EndColor: {r: 0, g: 0, b: 0, a: 0}
+  repeat: 0
+  generators: []
   ringDistance: 0.77
