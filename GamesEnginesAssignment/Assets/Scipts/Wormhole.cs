@@ -14,6 +14,7 @@ public class Wormhole : MonoBehaviour
     private float curveRadius;
     private int curveSegmentCount;
 
+    //procedurally generate colour with lerp
     public float speed = 1.0f;
     public Color StartColor;
     public Color EndColor;
@@ -54,7 +55,7 @@ public class Wormhole : MonoBehaviour
     private void Update()
     {
         if(!repeat)
-        {
+        { //repeat lerp every set amount of time
             float t = (Time.time - startTime) * speed;
             GetComponent<Renderer>().material.color = Color.Lerp(StartColor, EndColor, t);
             
@@ -168,7 +169,7 @@ public class Wormhole : MonoBehaviour
         transform.localScale = Vector3.one;
     }
 
-  
+  //set the UV of the surface to make the mesh display
 private void SetSurface()
     {
         surface = new Vector2[vertices.Length];
